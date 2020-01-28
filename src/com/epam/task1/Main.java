@@ -1,11 +1,13 @@
 package com.epam.task1;
 
+import java.util.Random;
 import java.util.Scanner;
 
 // 1. В массив A [N] занесены натуральные числа. Найти сумму тех элементов, которые кратны данному К.
 public class Main {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
+        Random random = new Random();
 
         System.out.print("size: ");
         int size = in.nextInt();
@@ -13,7 +15,7 @@ public class Main {
         int[] array = new int[size];
 
         for (int i = 0; i < size; i++) {
-            array[i] = 1 + (int) (Math.random() * 29);
+            array[i] = random.nextInt(29) + 1;
             System.out.print(array[i] + " ");
         }
 
