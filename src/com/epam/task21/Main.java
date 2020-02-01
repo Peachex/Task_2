@@ -21,6 +21,7 @@ public class Main {
 
         int count;
         boolean flag = false;
+
         for (int i = 0; i < 10; i++) {
             count = 0;
             for (int j = 0; j < 20; j++) {
