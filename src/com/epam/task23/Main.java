@@ -23,16 +23,14 @@ public class Main {
         }
         System.out.println();
 
-        System.out.print("Введите номер строки, относительно которого будет выполняться сортировка: ");
-        int number = in.nextInt() - 1, temp;
-
+        int temp;
         for (int count = 0; count < size - 1; count++) {
-            for (int j = 0; j < size - 1; j++) {
-                if (matrix[number][j] > matrix[number][j + 1]) {
-                    for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
+                for (int i = 0; i < size - 1; i++) {
+                    if (matrix[i][j] > matrix[i + 1][j]) {
                         temp = matrix[i][j];
-                        matrix[i][j] = matrix[i][j + 1];
-                        matrix[i][j + 1] = temp;
+                        matrix[i][j] = matrix[i + 1][j];
+                        matrix[i + 1][j] = temp;
                     }
                 }
             }
@@ -48,16 +46,17 @@ public class Main {
         System.out.println();
 
         for (int count = 0; count < size - 1; count++) {
-            for (int j = 0; j < size - 1; j++) {
-                if (matrix[number][j] < matrix[number][j + 1]) {
-                    for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
+                for (int i = 0; i < size - 1; i++) {
+                    if (matrix[i][j] < matrix[i + 1][j]) {
                         temp = matrix[i][j];
-                        matrix[i][j] = matrix[i][j + 1];
-                        matrix[i][j + 1] = temp;
+                        matrix[i][j] = matrix[i + 1][j];
+                        matrix[i + 1][j] = temp;
                     }
                 }
             }
         }
+
         System.out.println("Сортировка столбцов матрицы по убыванию значений элементов: ");
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
