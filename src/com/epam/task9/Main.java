@@ -1,5 +1,6 @@
 package com.epam.task9;
 
+import java.util.Random;
 import java.util.Scanner;
 
 /* 9. В массиве целых чисел с количеством элементов n найти наиболее часто встречающееся число. Если таких
@@ -7,6 +8,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
+        Random random = new Random();
 
         System.out.print("size: ");
         int size = in.nextInt();
@@ -14,7 +16,7 @@ public class Main {
         int[] array = new int[size];
 
         for (int i = 0; i < size; i++) {
-            array[i] = (int) (Math.random() * 50 + 1) - 25;
+            array[i] = random.nextInt(51) - 25;
             System.out.print(array[i] + " ");
         }
 
@@ -31,11 +33,11 @@ public class Main {
             if (count > maxCount) {
                 maxCount = count;
                 maxIndex = i;
-                continue;
-            }
-            if (count == maxCount && array[i] < array[maxCount]) {
-                maxCount = count;
-                maxIndex = i;
+            } else {
+                if (count == maxCount && array[i] < array[maxIndex]) {
+                    maxCount = count;
+                    maxIndex = i;
+                }
             }
         }
 
