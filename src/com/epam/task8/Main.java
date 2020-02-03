@@ -1,5 +1,6 @@
 package com.epam.task8;
 
+import java.util.Random;
 import java.util.Scanner;
 
 /* 8. Дана последовательность целых чисел a(1), a(2), ..., a(n). Образовать новую последовательность,
@@ -7,6 +8,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
+        Random random = new Random();
 
         System.out.print("size: ");
         int size = in.nextInt();
@@ -14,7 +16,7 @@ public class Main {
         int[] array1 = new int[size];
 
         for (int i = 0; i < size; i++) {
-            array1[i] = (int) (Math.random() * 50 + 1) - 25;
+            array1[i] = random.nextInt(31) - 15;
             System.out.print(array1[i] + " ");
         }
 
