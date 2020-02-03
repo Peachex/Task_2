@@ -22,13 +22,11 @@ public class Main {
 
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
-                matrix[i][j] = i + 1;
-            }
-        }
-
-        for (int i = 1; i < size; i++) {
-            for (int j = size - 1; j >= size - i; j--) {
-                matrix[i][j] = 0;
+                if (j < size - i) {
+                    matrix[i][j] = i + 1;
+                } else {
+                    matrix[i][j] = 0;
+                }
             }
         }
 
