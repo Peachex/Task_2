@@ -1,11 +1,13 @@
 package com.epam.task4;
 
+import java.util.Random;
 import java.util.Scanner;
 
 // 4. Даны действительные числа а 1  ,а 2  ,..., а n  . Поменять местами наибольший и наименьший элементы.
 public class Main {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
+        Random random = new Random();
 
         System.out.print("size: ");
         int size = in.nextInt();
@@ -13,7 +15,12 @@ public class Main {
         double[] array = new double[size];
 
         for (int i = 0; i < size; i++) {
-            array[i] = (int) (Math.random() * 50 + 1) - 25;
+            if (random.nextInt(2) == 0) {
+                array[i] = (Math.random() * 50 + 1) - 25;
+            } else {
+                array[i] = (int) (Math.random() * 50 + 1) - 25;
+            }
+
             System.out.print(array[i] + "  ");
         }
 
