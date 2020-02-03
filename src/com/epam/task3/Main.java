@@ -18,23 +18,16 @@ public class Main {
             System.out.print(array[i] + "  ");
         }
 
-        int countPositive = 0, countNegative = 0, countNull = 0;
+        int countPositive = 0, countNegative = 0;
         for (int i = 0; i < size; i++) {
             if (array[i] > 0) {
                 countPositive++;
-                continue;
-            }
-
-            if (array[i] < 0) {
-                countNegative++;
-                continue;
-            }
-
-            if (array[i] == 0) {
-                countNull++;
-                continue;
+            } else {
+                if (array[i] < 0) {
+                    countNegative++;
+                }
             }
         }
-        System.out.println("\nПоложительные числа: " + countPositive + "\nОтрицательные числа: " + countNegative + "\nЧисла, равные нулю: " + countNull);
+        System.out.println("\nПоложительные числа: " + countPositive + "\nОтрицательные числа: " + countNegative + "\nЧисла, равные нулю: " + (size - countNegative - countPositive));
     }
 }
