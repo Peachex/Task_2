@@ -23,20 +23,17 @@ public class Main {
         int minElement = findMin(array1), temp;
         System.out.println("\nmin = " + minElement);
 
+        int count = 1;
         for (int i = 0; i < size - 1; i++) {
             for (int j = 0; j < size - 1; j++) {
                 if (array1[j] == minElement) {
                     temp = array1[j];
                     array1[j] = array1[j + 1];
                     array1[j + 1] = temp;
+                    if (i == size - 2) {
+                        count++;
+                    }
                 }
-            }
-        }
-
-        int count = 0;
-        for (int i = 0; i < size; i++) {
-            if (array1[i] == minElement) {
-                count++;
             }
         }
 
