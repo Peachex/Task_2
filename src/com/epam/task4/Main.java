@@ -15,11 +15,7 @@ public class Main {
         double[] array = new double[size];
 
         for (int i = 0; i < size; i++) {
-            if (random.nextInt(2) == 0) {
-                array[i] = (Math.random() * 50 + 1) - 25;
-            } else {
-                array[i] = (int) (Math.random() * 50 + 1) - 25;
-            }
+            array[i] = random.nextDouble() * 51 - 25;
 
             System.out.print(array[i] + "  ");
         }
