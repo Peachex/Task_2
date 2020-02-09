@@ -18,6 +18,20 @@ public class Main {
         int[] array = new int[size];
         for (int i = 0; i < size; i++) {
             array[i] = random.nextInt(21) - 10;
+        }
+
+        int temp;
+        for (int count = 0; count < size - 1; count++) {
+            for (int i = 0; i < size - 1; i++) {
+                if (array[i] > array[i + 1]) {
+                    temp = array[i];
+                    array[i] = array[i + 1];
+                    array[i + 1] = temp;
+                }
+            }
+        }
+
+        for (int i = 0; i < size; i++) {
             System.out.print(array[i] + "\t");
         }
 
@@ -32,7 +46,7 @@ public class Main {
     public static void sort(int[] array, int size) {
         int temp;
         int maxElement;
-        int maxElementIndex = 0;
+        int maxElementIndex;
         for (int i = 0; i < size; i++) {
             maxElement = array[i];
             maxElementIndex = i;
