@@ -41,19 +41,25 @@ public class Main {
 
         sort(arrayDown, arrayUp, size);
 
+        System.out.println("Дроби: ");
         view(arrayUp, arrayDown, size);
-        System.out.println("\nОбщий знаменатель = " + commonDown + "\n");
+        System.out.print("\nОбщий знаменатель = " + commonDown + "\n");
 
         for (int i = 0; i < size; i++) {
             arrayUp[i] *= commonDown / arrayDown[i];
             arrayDown[i] = commonDown;
         }
 
+        System.out.println("Дроби c общим знаменателем: ");
+        view(arrayUp, arrayDown, size);
+
+        sort(arrayDown, arrayUp, size);
+
+        System.out.println("\nДроби с общим знаменателем в порядке возрастания: ");
         view(arrayUp, arrayDown, size);
     }
 
     public static void view(int[] arrayUp, int[] arrayDown, int size) {
-        System.out.println("Дроби: ");
         for (int i = 0; i < size; i++) {
             System.out.print(arrayUp[i] + "/" + arrayDown[i] + "\t\t");
         }
