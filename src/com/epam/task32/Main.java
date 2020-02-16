@@ -30,14 +30,17 @@ public class Main {
 
     public static void sort(int[] array, int size) {
         int temp;
-        for (int count = 0; count < size - 1; count++) {
-            for (int i = 0; i < size - 1; i++) {
-                if (array[i] > array[i + 1]) {
-                    temp = array[i];
-                    array[i] = array[i + 1];
-                    array[i + 1] = temp;
-                }
 
+        for (int i = 0; i < size - 1; i++) {
+            if (array[i] > array[i + 1]) {
+                temp = array[i];
+                array[i] = array[i + 1];
+                array[i + 1] = temp;
+
+                if (i > 0) {
+                    i -= 2;
+                }
+            } else {
                 if (array[i] > array[i + 1] && i != 0) {
                     i -= 2;
                 }
