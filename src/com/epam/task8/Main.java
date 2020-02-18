@@ -4,7 +4,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 /* 8. Дана последовательность целых чисел a(1), a(2), ..., a(n). Образовать новую последовательность,
-    выбросив из исходной те члены, которые равны min(a(1), a(2), ..., a(n)). */
+   выбросив из исходной те члены, которые равны min(a(1), a(2), ..., a(n)). */
 public class Main {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
@@ -20,20 +20,21 @@ public class Main {
             System.out.print(array1[i] + " ");
         }
 
-        int minElement = findMin(array1), temp;
+        int minElement = findMin(array1);
         System.out.println("\nmin = " + minElement);
 
-        int count = 1;
-        for (int i = 0; i < size - 1; i++) {
-            for (int j = 0; j < size - 1; j++) {
-                if (array1[j] == minElement) {
-                    temp = array1[j];
-                    array1[j] = array1[j + 1];
-                    array1[j + 1] = temp;
-                    if (i == size - 2) {
-                        count++;
-                    }
-                }
+        int count = 0;
+        int temp;
+
+        for (int i = 0; i < size - count; i++) {
+            while (i < (size - count) && array1[i + count] == minElement) {
+                count++;
+            }
+
+            if (i < size - count) {
+                temp = array1[i];
+                array1[i] = array1[count + i];
+                array1[count + i] = temp;
             }
         }
 
