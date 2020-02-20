@@ -15,6 +15,7 @@ public class Main {
         int size = in.nextInt();
 
         int[] array = new int[size];
+
         for (int i = 0; i < size; i++) {
             array[i] = random.nextInt(21) - 10;
             System.out.print(array[i] + "\t");
@@ -38,10 +39,6 @@ public class Main {
                 array[i + 1] = temp;
 
                 if (i > 0) {
-                    i -= 2;
-                }
-            } else {
-                if (array[i] > array[i + 1] && i != 0) {
                     i -= 2;
                 }
             }
