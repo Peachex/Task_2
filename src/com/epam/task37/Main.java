@@ -10,16 +10,12 @@ public class Main {
         System.out.print("a = ");
         double a = in.nextDouble();
 
-        double square;
-        square = findSquare(a);
+        double square = findSquare(a) * 6;
 
         System.out.println("\nSquare = " + square);
     }
 
     public static double findSquare(double a) {
-        double p;
-        p = a * 3 / 2;
-
-        return (6 * Math.sqrt(p * Math.pow((p - a), 3)));
+        return (Math.sqrt(3) * a * a / 4);
     }
 }
