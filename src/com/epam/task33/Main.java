@@ -18,23 +18,37 @@ public class Main {
         int[] array1 = new int[size1];
         int[] array2 = new int[size2];
 
-        for (int i = 0; i < Math.max(size1, size2); i++) {
+        array1[0] = random.nextInt(11);
+        array2[0] = random.nextInt(11);
+
+        for (int i = 1; i < Math.max(size1, size2); i++) {
             if (i < size1) {
-                array1[i] = random.nextInt(20) - 10;
+                array1[i] = random.nextInt(11) + array1[i - 1];
             }
             if (i < size2) {
-                array2[i] = random.nextInt(20) - 10;
+                array2[i] = random.nextInt(11) + array2[i - 1];
             }
         }
 
-        sortArray(array1, size1);
         viewArray(array1, size1);
-
-        sortArray(array2, size2);
         viewArray(array2, size2);
 
-        for (int i = 0; i < size2; i++) {
-            findPlace(array1, size1, array2[i]);
+        int j = 0;
+        for (int i = 0; i < size1 && j < size2; i++) {
+            while (j < size2 && array2[j] <= array1[0]) {
+                System.out.print("\n" + array2[j] + " должно быть перед первым элементом (" + array1[0] + ")");
+                j++;
+            }
+
+            while (j < size2 && array2[j] >= array1[size1 - 1]) {
+                System.out.print("\n" + array2[j] + " должно быть после последнего элемента (" + array1[size1 - 1] + ")");
+                j++;
+            }
+
+            while (j < size2 && array2[j] < array1[i]) {
+                System.out.print("\n" + array2[j] + " должно быть между " + (i) + "-ым и " + (i + 1) + "-ым элементом (" + array1[i - 1] + " и " + array1[i] + ")");
+                j++;
+            }
         }
 
         System.out.println();
@@ -45,37 +59,5 @@ public class Main {
             System.out.print(array[i] + "\t");
         }
         System.out.println();
-    }
-
-    public static void findPlace(int[] array, int size, int number) {
-        if (number <= array[0]) {
-            System.out.print("\n" + number + " должно быть перед первым элементом (" + array[0] + ")");
-            return;
-        }
-
-        if (number >= array[size - 1]) {
-            System.out.print("\n" + number + " должно быть после последнего элемента (" + array[size - 1] + ")");
-            return;
-        }
-
-        for (int i = 1; i < size - 1; i++) {
-            if (number >= array[i] && number <= array[i + 1]) {
-                System.out.print("\n" + number + " должно быть между " + (i + 1) + "-ым и " + (i + 2) + "-ым элементом (" + array[i] + " и " + array[i + 1] + ")");
-                break;
-            }
-        }
-    }
-
-    public static void sortArray(int[] array, int size) {
-        int temp;
-        for (int count = 0; count < size - 1; count++) {
-            for (int i = 0; i < size - 1; i++) {
-                if (array[i] > array[i + 1]) {
-                    temp = array[i];
-                    array[i] = array[i + 1];
-                    array[i + 1] = temp;
-                }
-            }
-        }
     }
 }
