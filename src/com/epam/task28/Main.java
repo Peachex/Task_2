@@ -17,21 +17,21 @@ public class Main {
         int[] array1 = new int[size1];
         int[] array2 = new int[size2];
 
-        for (int i = 0; i < Math.max(size1, size2); i++) {
+        array1[0] = array2[0] = random.nextInt(11);
+
+        for (int i = 1; i < Math.max(size1, size2); i++) {
             if (i < size1) {
-                array1[i] = random.nextInt(31) - 15;
+                array1[i] = random.nextInt(11) + array1[i - 1];
             }
             if (i < size2) {
-                array2[i] = random.nextInt(21) - 10;
+                array2[i] = random.nextInt(11) + array2[i - 1];
             }
         }
 
         System.out.print("Первая последовательность: ");
-        sort(array1, size1);
         viewArray(array1, size1);
 
         System.out.print("Вторая последовательность: ");
-        sort(array2, size2);
         viewArray(array2, size2);
 
         int size = size1 + size2;
@@ -40,16 +40,27 @@ public class Main {
         int i1 = 0;
         int i2 = 0;
         for (int i = 0; i < size; i++) {
-            if (i1 < size1) {
-                array[i] = array1[i1];
-                i1++;
+            if (i1 < size1 && i2 < size2) {
+                if (array1[i1] > array2[i2]) {
+                    array[i] = array2[i2];
+                    i2++;
+                } else {
+                    array[i] = array1[i1];
+                    i1++;
+                }
             } else {
-                array[i] = array2[i2];
-                i2++;
+                if (i1 < size1 && i2 >= size2) {
+                    array[i] = array1[i1];
+                    i1++;
+                } else {
+                    if (i1 >= size1 && i2 < size2) {
+                        array[i] = array2[i2];
+                        i2++;
+                    }
+                }
             }
         }
 
-        sort(array, size);
         System.out.println();
         viewArray(array, size);
     }
@@ -59,18 +70,5 @@ public class Main {
             System.out.print(array[i] + "\t");
         }
         System.out.println();
-    }
-
-    public static void sort(int[] array, int size) {
-        int temp;
-        for (int count = 0; count < size - 1; count++) {
-            for (int i = 0; i < size - 1; i++) {
-                if (array[i] > array[i + 1]) {
-                    temp = array[i];
-                    array[i] = array[i + 1];
-                    array[i + 1] = temp;
-                }
-            }
-        }
     }
 }
