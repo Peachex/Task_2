@@ -17,7 +17,8 @@ public class Main {
         int[] array1 = new int[size1];
         int[] array2 = new int[size2];
 
-        array1[0] = array2[0] = random.nextInt(11);
+        array1[0] = random.nextInt(11);
+        array2[0] = random.nextInt(11);
 
         for (int i = 1; i < Math.max(size1, size2); i++) {
             if (i < size1) {
