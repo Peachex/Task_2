@@ -4,7 +4,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 /* 4.  Сортировка  обменами.  Дана  последовательность  чисел a1 <= a2 <= ... <= an. Требуется  переставить  числа  в
-       порядке  возрастания.  Для  этого  сравниваются  два  соседних  числа a(i) и a(i + 1). Если a(i) > a(i + 1), то делается
+       порядке  убывания.  Для  этого  сравниваются  два  соседних  числа a(i) и a(i + 1). Если a(i) > a(i + 1), то делается
        перестановка. Так продолжается до тех пор, пока все элементы не станут расположены в порядке возрастания.
        Составить алгоритм сортировки, подсчитывая при этом количества перестановок. */
 public class Main {
@@ -16,8 +16,13 @@ public class Main {
         int size = in.nextInt();
 
         int[] array = new int[size];
-        for (int i = 0; i < size; i++) {
-            array[i] = random.nextInt(21) - 10;
+
+        array[0] = random.nextInt(11);
+
+        System.out.print(array[0] + "\t");
+
+        for (int i = 1; i < size; i++) {
+            array[i] = random.nextInt(11) + array[i - 1];
             System.out.print(array[i] + "\t");
         }
 
@@ -28,7 +33,7 @@ public class Main {
         while (flag) {
             flag = false;
             for (int i = 0; i < size - 1; i++) {
-                if (array[i] > array[i + 1]) {
+                if (array[i] < array[i + 1]) {
                     temp = array[i];
                     array[i] = array[i + 1];
                     array[i + 1] = temp;
