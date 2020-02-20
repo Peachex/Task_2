@@ -21,11 +21,13 @@ public class Main {
 
     public static int isDivider(int a, int b, int c, int d) {
         int maxDivider = 1;
+
         for (int i = 1; i <= (Math.min(Math.min(a, b), Math.min(c, d))); i++) {
             if (a % i == 0 && b % i == 0 && c % i == 0 && d % i == 0) {
                 maxDivider = i;
             }
         }
+
         return maxDivider;
     }
 }
