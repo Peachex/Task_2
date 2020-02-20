@@ -16,8 +16,11 @@ public class Main {
         int size = in.nextInt();
 
         int[] array = new int[size];
-        for (int i = 0; i < size; i++) {
-            array[i] = random.nextInt(21) - 10;
+
+        array[0] = random.nextInt(11);
+
+        for (int i = 1; i < size; i++) {
+            array[i] = random.nextInt(11) + array[i - 1];
         }
 
         int temp;
