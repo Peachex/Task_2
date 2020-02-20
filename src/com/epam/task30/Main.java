@@ -23,14 +23,17 @@ public class Main {
 
         int temp;
         int count = 0;
+        boolean flag = true;
 
-        while (checkCondition(array, size)) {
+        while (flag) {
+            flag = false;
             for (int i = 0; i < size - 1; i++) {
-                if (array[i] >= array[i + 1]) {
+                if (array[i] > array[i + 1]) {
                     temp = array[i];
                     array[i] = array[i + 1];
                     array[i + 1] = temp;
                     count++;
+                    flag = true;
                 }
             }
         }
@@ -40,14 +43,5 @@ public class Main {
             System.out.print(array[i] + "\t");
         }
         System.out.println("\nКоличество перестановок: " + count);
-    }
-
-    public static boolean checkCondition(int[] array, int size) {
-        for (int i = 0; i < size - 1; i++) {
-            if (array[i] > array[i + 1]) {
-                return true;
-            }
-        }
-        return false;
     }
 }
