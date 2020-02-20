@@ -20,7 +20,7 @@ public class Main {
             }
         }
 
-        int nok = findNok(a, b, nod);
+        int nok = findMinDividend(a, b, nod);
 
         System.out.println("Числа: " + a + ", " + b + "\nНОД = " + nod + "\nНОК = " + nok);
     }
@@ -29,7 +29,7 @@ public class Main {
         return (a % number == 0 && b % number == 0);
     }
 
-    public static int findNok(int a, int b, int nod) {
+    public static int findMinDividend(int a, int b, int nod) {
         return (a * b / nod);
     }
 }
