@@ -15,7 +15,7 @@ public class Main {
 
         int nod = 1;
         for (int i = 1; i <= Math.min(a, b); i++) {
-            if (findNod(a, b, i)) {
+            if (isDivider(a, b, i)) {
                 nod = i;
             }
         }
@@ -25,7 +25,7 @@ public class Main {
         System.out.println("Числа: " + a + ", " + b + "\nНОД = " + nod + "\nНОК = " + nok);
     }
 
-    public static boolean findNod(int a, int b, int number) {
+    public static boolean isDivider(int a, int b, int number) {
         return (a % number == 0 && b % number == 0);
     }
 
