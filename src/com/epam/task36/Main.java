@@ -14,17 +14,18 @@ public class Main {
         int c = in.nextInt();
         int d = in.nextInt();
 
-        int nod = 0;
-        for (int i = 1; i <= (Math.min(Math.min(a, b), Math.min(c, d))); i++) {
-            if (findNod(a, b, i) && findNod(c, d, i)) {
-                nod = i;
-            }
-        }
+        int maxDivider = isDivider(a, b, c, d);
 
-        System.out.println("Числа: " + a + ", " + b + ", " + c + ", " + d + "\nНОД = " + nod);
+        System.out.println("Числа: " + a + ", " + b + ", " + c + ", " + d + "\nНОД = " + maxDivider);
     }
 
-    public static boolean findNod(int a, int b, int number) {
-        return (a % number == 0 && b % number == 0);
+    public static int isDivider(int a, int b, int c, int d) {
+        int maxDivider = 1;
+        for (int i = 1; i <= (Math.min(Math.min(a, b), Math.min(c, d))); i++) {
+            if (a % i == 0 && b % i == 0 && c % i == 0 && d % i == 0) {
+                maxDivider = i;
+            }
+        }
+        return maxDivider;
     }
 }
