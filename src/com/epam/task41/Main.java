@@ -6,15 +6,17 @@ public class Main {
         System.out.println("Сумма факториалов всех нечетных чисел от 1 до 9 = " + findSum());
     }
 
-    public static double findSum() {
-        double fact = 1;
-        double sumFact = 0;
-        for (int i = 1; i <= 9; i += 2) {
-            for (int j = 1; j <= i; j++) {
-                fact *= j;
+    public static int findSum() {
+        int sumFact = 0;
+        int fact = 1;
+
+        for (int i = 1; i < 10; i++) {
+            fact *= i;
+            if (i % 2 != 0) {
                 sumFact += fact;
             }
         }
+
         return sumFact;
     }
 }
