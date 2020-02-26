@@ -13,15 +13,10 @@ public class Main {
         double number2 = in.nextDouble();
         double number3 = in.nextDouble();
 
-        System.out.print("Числа простые: " + (checkCondition(number1) && checkCondition(number2) && checkCondition(number3)));
+        System.out.print("Числа взаимно простые: " + (checkCondition(number1, number2, number3)));
     }
 
-    public static boolean checkCondition(double number) {
-        for (int i = 2; i <= number / 2; i++) {
-            if (number % i == 0) {
-                return false;
-            }
-        }
-        return true;
+    public static boolean checkCondition(double number1, double number2, double number3) {
+        return ((number1 % number2 != 0 && number1 % number3 != 0) && (number2 % number1 != 0 && number2 % number3 != 0) && (number3 % number1 != 0 && number3 % number2 != 0));
     }
 }
