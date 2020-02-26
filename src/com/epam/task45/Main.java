@@ -9,8 +9,8 @@ public class Main {
 
         System.out.print("Введите два числа: ");
 
-        double number1 = in.nextDouble();
-        double number2 = in.nextDouble();
+        int number1 = in.nextInt();
+        int number2 = in.nextInt();
 
         System.out.println("Числа: " + number1 + "\t" + number2);
 
@@ -25,31 +25,7 @@ public class Main {
         }
     }
 
-    public static int numeralsAmount(double number) {
-        String numberStr = String.valueOf(number);
-
-        char[] numerals = numberStr.toCharArray();
-
-        int j = numerals.length - 1;
-        if (numerals.length > 7) {
-            for (int i = numerals.length - 1; i >= 0; i--) {
-                if (numerals[i] == 'E') {
-                    j = i - 1;
-                    break;
-                }
-            }
-        }
-
-        int count = 0;
-
-        for (int i = j; i >= 0; i--) {
-            if (numerals[i] == '0') {
-                count++;
-            } else {
-                break;
-            }
-        }
-
-        return (numerals.length - count - 1 - (numerals.length - j));
+    public static int numeralsAmount(int number) {
+        return (int) (Math.log10(number));
     }
 }
