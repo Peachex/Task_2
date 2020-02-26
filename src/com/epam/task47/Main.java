@@ -13,12 +13,12 @@ public class Main {
         int size = in.nextInt();
 
         System.out.println("Числа: ");
-        for (int i = size; i < size * 2; i++) {
+        for (int i = size; i <= size * 2; i++) {
             System.out.print(i + "\t");
         }
 
         System.out.println("\n\nПары: ");
-        for (int i = size; i < size * 2; i++) {
+        for (int i = size; i <= size * 2; i++) {
             findTwins(i, size);
         }
         System.out.println();
@@ -26,9 +26,18 @@ public class Main {
 
     public static void findTwins(int number, int size) {
         for (int i = size; i <= size * 2; i++) {
-            if (i - number == 2) {
+            if ((i - number == 2) && checkCondition(number) && checkCondition(i)) {
                 System.out.print(number + " - " + i + "\n");
             }
         }
+    }
+
+    public static boolean checkCondition(int number) {
+        for (int i = 2; i <= number / 2; i++) {
+            if (number % i == 0) {
+                return false;
+            }
+        }
+        return true;
     }
 }
