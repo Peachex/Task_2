@@ -13,8 +13,7 @@ public class Main {
         int k = in.nextInt();
         int n = in.nextInt();
 
-        int size;
-        size = (n - k) / 9 + 1;
+        int size = (n - k) / 9 + 1;
 
         int[] array = new int[size];
 
