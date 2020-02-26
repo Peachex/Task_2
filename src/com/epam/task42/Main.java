@@ -25,32 +25,16 @@ public class Main {
         int k = in.nextInt();
         int m = in.nextInt();
 
-        findSum(array, size, k, m);
+        findSum(array, k, m);
     }
 
-    public static void findSum(int[] array, int size, int k, int m) {
-        int sum = 0;
-
-        for (int i = k - 1; i < m - 1; i++) {
-            if (i + 3 <= m - 1) {
-                sum = plus(array, i);
-
-                System.out.print("\nСумма: " + array[i] + ", " + array[i + 1] + ", " + array[i + 2] + " = " + sum);
-
-                i += 2;
-            } else {
-                i -= i + 3 - (m - 1);
-                sum = plus(array, i);
-
-                System.out.print("\nСумма: " + array[i] + ", " + array[i + 1] + ", " + array[i + 2] + " = " + sum);
-
-                i += 2;
-            }
-            System.out.println();
-        }
+    public static void findSum(int[] array, int k, int m) {
+        System.out.print("\nСумма: " + array[k - 1] + ", " + array[k] + ", " + array[m - 1] + " = " + plus(array, k));
+        System.out.println();
     }
+
 
     public static int plus(int[] array, int i) {
-        return (array[i] + array[i + 1] + array[i + 2]);
+        return (array[i - 1] + array[i] + array[i + 1]);
     }
 }
