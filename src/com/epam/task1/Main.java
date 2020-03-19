@@ -20,7 +20,8 @@ public class Main {
         }
 
         System.out.print("\nK: ");
-        int k = in.nextInt(), sum = 0;
+        int k = in.nextInt();
+        int sum = 0;
 
         for (int i = 0; i < size; i++) {
             if (array[i] % k == 0) {
