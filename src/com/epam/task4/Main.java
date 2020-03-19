@@ -20,7 +20,8 @@ public class Main {
             System.out.print(array[i] + "  ");
         }
 
-        int maxIndex = findMax(array), minIndex = findMin(array);
+        int maxIndex = findMax(array);
+        int minIndex = findMin(array);
         double temp;
 
         System.out.println("\n\nmax = " + array[maxIndex] + "\nmin = " + array[minIndex] + "\n");
