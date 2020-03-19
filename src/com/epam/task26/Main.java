@@ -21,7 +21,7 @@ public class Main {
         zeroMatrix(matrix, size);
 
         if (size % 2 != 0) {
-            int number = 1, i = 0, j = (size + 1) / 2 - 1;
+            int number = 1;
             magicSquare(matrix, size, number);
 
         } else {
@@ -95,7 +95,8 @@ public class Main {
                     }
                 }
 
-                int k = (size - 2) / 4, temp;
+                int k = (size - 2) / 4;
+                int temp;
                 for (int i = 0; i < size2; i++) {
                     for (int j = 0; j < size2; j++) {
                         if (i != (size2 - 1) / 2) {
@@ -129,7 +130,8 @@ public class Main {
                 }
             } else {
                 if (size % 2 == 0 && size % 4 == 0) {
-                    int number1 = 0, number2 = size * size + 1;
+                    int number1 = 0;
+                    int number2 = size * size + 1;
                     for (int i = 0; i < size; i++) {
                         for (int j = 0; j < size; j++) {
                             number1++;
@@ -154,7 +156,8 @@ public class Main {
     }
 
     public static void magicSquare(int[][] matrix, int size, int number) {
-        int i = 0, j = (size + 1) / 2 - 1;
+        int i = 0;
+        int j = (size + 1) / 2 - 1;
         matrix[i][j] = number;
         number++;
         i--;
@@ -206,7 +209,9 @@ public class Main {
     }
 
     public static boolean checkMagicSquare(int[][] matrix, int size) {
-        int sum1, sum2, magicConst = size * (size * size + 1) / 2;
+        int sum1;
+        int sum2;
+        int magicConst = size * (size * size + 1) / 2;
         for (int i = 0; i < size; i++) {
             sum1 = sum2 = 0;
             for (int j = 0; j < size; j++) {
@@ -218,7 +223,8 @@ public class Main {
             }
         }
 
-        int sum3 = 0, sum4 = 0;
+        int sum3 = 0;
+        int sum4 = 0;
         for (int i = 0; i < size; i++) {
             sum3 += matrix[i][i];
             sum4 += matrix[i][size - i - 1];

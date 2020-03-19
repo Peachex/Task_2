@@ -19,14 +19,11 @@ public class Main {
     }
 
     public static double findSquare(double x, double y, double z, double t) {
-        double square1;
-        square1 = x * y / 2;
+        double square1 = x * y / 2;
 
-        double p;
-        p = (z + t + (Math.sqrt(x * x + y * y))) / 2;
+        double p = (z + t + (Math.sqrt(x * x + y * y))) / 2;
 
-        double square2;
-        square2 = Math.sqrt(p * (p - Math.sqrt(x * x + y * y)) * (p - z) * (p - t)); // формула Герона.
+        double square2 = Math.sqrt(p * (p - Math.sqrt(x * x + y * y)) * (p - z) * (p - t)); // формула Герона.
 
         return square1 + square2;
     }

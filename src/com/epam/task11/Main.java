@@ -8,7 +8,8 @@ public class Main {
         Scanner in = new Scanner(System.in);
 
         System.out.print("rows, cols: ");
-        int rows = in.nextInt(), cols = in.nextInt();
+        int rows = in.nextInt();
+        int cols = in.nextInt();
 
         int[][] matrix = new int[rows][cols];
 

@@ -11,7 +11,8 @@ public class Main {
         Random random = new Random();
 
         System.out.print("size m x n (m > n or m = n): ");
-        int sizeM = in.nextInt(), sizeN = in.nextInt();
+        int sizeM = in.nextInt();
+        int sizeN = in.nextInt();
 
         int[][] matrix = new int[sizeM][sizeN];
 

@@ -26,11 +26,9 @@ public class Main {
     }
 
     public static int numeralsSum(int number) {
-        int size;
-        size = (int) Math.log10(number);
+        int size = (int) Math.log10(number);
 
-        int length;
-        length = (int) (Math.pow(10, (int) Math.log10(number)));
+        int length = (int) (Math.pow(10, (int) Math.log10(number)));
 
         int sum = 0;
         for (int i = 0; i <= size; i++) {

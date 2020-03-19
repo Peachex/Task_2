@@ -37,7 +37,8 @@ public class Main {
         int size = size1 + size2;
         int[] array = new int[size];
 
-        int i1 = 0, i2 = 0;
+        int i1 = 0;
+        int i2 = 0;
         for (int i = 0; i < size; i++) {
             if (i < k || i2 >= size2) {
                 array[i] = array1[i1];

@@ -25,7 +25,9 @@ public class Main {
         }
 
         System.out.print("\nВведите номера двух столбцов для перестановки: ");
-        int n1 = in.nextInt() - 1, n2 = in.nextInt() - 1, temp;
+        int n1 = in.nextInt() - 1;
+        int n2 = in.nextInt() - 1;
+        int temp;
 
         for (int i = 0; i < size; i++) {
             temp = matrix[i][n1];

@@ -10,7 +10,8 @@ public class Main {
         Random random = new Random();
 
         System.out.print("size rows, cols: ");
-        int rows = in.nextInt(), cols = in.nextInt();
+        int rows = in.nextInt();
+        int cols = in.nextInt();
 
         int[][] matrix = new int[rows][cols];
 

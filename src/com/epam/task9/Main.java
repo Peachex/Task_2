@@ -20,7 +20,9 @@ public class Main {
             System.out.print(array[i] + " ");
         }
 
-        int count, maxCount = 0, maxIndex = 0;
+        int count;
+        int maxCount = 0;
+        int maxIndex = 0;
 
         for (int i = 0; i < size; i++) {
             count = 0;

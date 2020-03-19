@@ -23,7 +23,9 @@ public class Main {
             System.out.println();
         }
 
-        int sum, maxSum = 0, maxIndex = 0;
+        int sum;
+        int maxSum = 0;
+        int maxIndex = 0;
         for (int j = 0; j < size; j++) {
             sum = 0;
             for (int i = 0; i < size; i++) {

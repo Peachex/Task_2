@@ -29,11 +29,9 @@ public class Main {
     }
 
     public static boolean checkNumber(int number) {
-        int size;
-        size = (int) Math.log10(number);
+        int size = (int) Math.log10(number);
 
-        int length;
-        length = (int) (Math.pow(10, (int) Math.log10(number)));
+        int length = (int) (Math.pow(10, (int) Math.log10(number)));
 
         int numeral1;
 
